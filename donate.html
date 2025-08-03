@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate - Pampered Pet</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <style>
+    .donate-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .donate-container h2 {
+      margin-bottom: 20px;
+      color: rgb(0, 0, 0);
+    }
+    .donate-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .donate-options label {
+      background: #f0f0f0;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .donate-options input {
+      margin-right: 8px;
+    }
+    .custom-amount {
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo"><img src="images/logo.png" alt="Pampered Pet Logo"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Donation Form -->
+  <div class="donate-container">
+    <h2>Support Our Mission</h2>
+    <p>Your contribution helps us rescue, treat, and care for animals in need.</p>
+    <div class="donate-options">
+      <label><input type="radio" name="amount" value="10">$10</label>
+      <label><input type="radio" name="amount" value="25">$25</label>
+      <label><input type="radio" name="amount" value="50">$50</label>
+      <label><input type="radio" name="amount" value="100">$100</label>
+    </div>
+    <div class="custom-amount">
+      <input type="number" id="customAmount" placeholder="Custom Amount" style="padding:10px; width:90%; border-radius:5px; border:1px solid #ccc;">
+    </div>
+    <div style="margin-top:20px;">
+      <button class="btn-primary" onclick="proceedDonate()">Proceed</button>
+      <a href="about.html"><button class="btn-cancel">Cancel</button></a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>The Pampered Pet</h3>
+        <p>Because your pet deserves the best. Visit us and experience care beyond expectations.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: support@pamperedpet.com</p>
+        <p>Phone: +94 77 123 4567</p>
+        <p>Location: 101 Highlevel Road, Nugegoda, Colombo, Sri Lanka</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#"><img src="images/fb.png" alt="Facebook" width="30"></a>
+      <a href="#"><img src="images/insta.png" alt="Instagram" width="30"></a>
+      <a href="#"><img src="images/twitter.png" alt="Twitter" width="30"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 The Pampered Pet. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

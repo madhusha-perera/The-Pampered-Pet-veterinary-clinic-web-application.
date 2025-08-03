@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Health Checkups",
+    "desc": "Regular exams, vaccinations, and preventative care to keep your pets healthy.",
+    "category": "health"
+  },
+  {
+    "title": "Emergency Care",
+    "desc": "24/7 emergency services for urgent medical needs with expert care on standby.",
+    "category": "emergency"
+  },
+  {
+    "title": "Grooming & Spa",
+    "desc": "Bathing, haircuts, nail trimming, and spa treatments to pamper your pets.",
+    "category": "grooming"
+  },
+  {
+    "title": "Pet Boarding",
+    "desc": "Safe, clean, and fun boarding facilities when you’re away from home.",
+    "category": "boarding"
+  },
+  {
+    "title": "Dental Care",
+    "desc": "Professional teeth cleaning and oral health checkups for pets.",
+    "category": "health"
+  }
+]

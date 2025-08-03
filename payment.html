@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment - Pampered Pet</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo"><img src="images/logo.png" alt="Pampered Pet Logo"></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div style="max-width:450px; margin:40px auto; background:#fff; padding:20px; border-radius:10px;">
+    <h2 style="text-align:center; color:rgb(224, 209, 0);">Enter Card Details</h2>
+    <form id="paymentForm">
+      <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="16">
+      <input type="text" id="expiry" placeholder="MM/YY">
+      <input type="text" id="cvv" placeholder="CVV (3 digits)" maxlength="3">
+      <input type="text" id="cardName" placeholder="Cardholder Name">
+      <div style="display:flex; justify-content:space-between;">
+        <button type="submit" class="btn-primary">Pay Now</button>
+        <a href="about.html"><button type="button" class="btn-cancel">Cancel</button></a>
+      </div>
+    </form>
+    <div id="successMsg" style="text-align:center; color:rgb(14, 204, 14); font-weight:bold; margin-top:15px;"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>The Pampered Pet</h3>
+        <p>Because your pet deserves the best. Visit us and experience care beyond expectations.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: support@pamperedpet.com</p>
+        <p>Phone: +94 77 123 4567</p>
+        <p>Location: 101 Highlevel Road, Nugegoda, Colombo, Sri Lanka</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+       <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <a href="#"><img src="images/fb.png" alt="Facebook" width="30"></a>
+      <a href="#"><img src="images/insta.png" alt="Instagram" width="30"></a>
+      <a href="#"><img src="images/twitter.png" alt="Twitter" width="30"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 The Pampered Pet. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

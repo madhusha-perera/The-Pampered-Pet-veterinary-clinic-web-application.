@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pampered Pet - Clinic Management</title>
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="css/RBCP.css">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="messageBox" class="message-box"></div>
+
+    <div class="container">
+        <!-- Login Page -->
+        <div id="loginPage" class="page">
+            <h1>The Pampered Pet</h1>
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="loginUsername">Username / Email:</label>
+                <input type="text" id="loginUsername" placeholder="Enter username or email">
+            </div>
+            <div class="form-group">
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" placeholder="Enter password">
+            </div>
+            <div class="flex-col space-y-4">
+                <button id="loginBtn" class="btn btn-primary">Login</button><br><br>
+                <p class="text-center">New Owner? <button id="goToSignupBtn" class="btn btn-primary">Sign Up</button>or<a href="index.html"><button id="backnBtn" class="btn btn-primary" >Back</button></a></p>
+
+               
+            </div>
+        </div>
+
+        <!-- Signup Page (Owner) -->
+        <div id="signupPage" class="page hidden">
+            <h1>The Pampered Pet</h1>
+            <h2>Owner Sign Up</h2>
+            <div class="form-group">
+                <label for="signupFname">First Name:</label>
+                <input type="text" id="signupFname" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="signupLname">Last Name:</label>
+                <input type="text" id="signupLname" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <label for="signupAddress">Address:</label>
+                <input type="text" id="signupAddress" placeholder="Address">
+            </div>
+            <div class="form-group">
+                <label for="signupPhone">Phone Number:</label>
+                <input type="tel" id="signupPhone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="signupUsername">Username:</label>
+                <input type="text" id="signupUsername" placeholder="Choose a Username">
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" placeholder="Choose a Password">
+            </div>
+            <div class="flex-col space-y-4">
+                <button id="signupBtn" class="btn btn-primary">Sign Up</button>
+                <button id="backToLoginBtn" class="btn btn-secondary">Back to Login</button>
+            </div>
+        </div>
+
+        <!-- Owner Dashboard -->
+        <div id="ownerDashboard" class="page hidden">
+            <h1>Owner Dashboard</h1>
+            <div class="dashboard-grid">
+                <button id="ownerRegisterPetBtn" class="dashboard-btn">Register New Pet</button>
+                <button id="ownerMakeAppointmentBtn" class="dashboard-btn">Make Appointment</button>
+                <button id="ownerMyPetsBtn" class="dashboard-btn">My Pets</button>
+                <button id="ownerLogoutBtn" class="dashboard-btn logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <!-- Owner: Register Pet Page -->
+        <div id="ownerRegisterPetPage" class="page hidden">
+            <h2>Register New Pet</h2>
+            <div class="form-group">
+                <label for="petName">Pet Name:</label>
+                <input type="text" id="petName" placeholder="Pet's Name">
+            </div>
+            <div class="form-group">
+                <label for="petSpecies">Species:</label>
+                <input type="text" id="petSpecies" placeholder="e.g., Dog, Cat">
+            </div>
+            <div class="form-group">
+                <label for="petBreed">Breed:</label>
+                <input type="text" id="petBreed" placeholder="e.g., Golden Retriever">
+            </div>
+            <div class="form-group">
+                <label for="petDob">Date of Birth:</label>
+                <input type="date" id="petDob">
+            </div>
+            <div class="form-group">
+                <label for="petGender">Gender:</label>
+                <select id="petGender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="flex-col space-y-4">
+                <button id="registerPetSubmitBtn" class="btn btn-primary">Register Pet</button>
+                <button id="backToOwnerDashboardFromRegisterPet" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Owner: Make Appointment Page -->
+        <div id="ownerMakeAppointmentPage" class="page hidden">
+            <h2>Make New Appointment</h2>
+            <div class="form-group">
+                <label for="appointmentPetSelect">Select Your Pet:</label>
+                <select id="appointmentPetSelect">
+                    <option value="">Select Pet</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="appointmentDate">Date:</label>
+                <input type="date" id="appointmentDate">
+            </div>
+            <div class="form-group">
+                <label for="appointmentTime">Time:</label>
+                <input type="time" id="appointmentTime">
+            </div>
+            <div class="form-group">
+                <label for="appointmentReason">Reason for Visit:</label>
+                <textarea id="appointmentReason" placeholder="e.g., Annual Checkup, Vaccination" rows="3"></textarea>
+            </div>
+            <div class="flex-col space-y-4">
+                <button id="requestAppointmentBtn" class="btn btn-primary">Request Appointment</button>
+                <button id="backToOwnerDashboardFromAppointment" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Owner: My Pets Page -->
+        <div id="ownerMyPetsPage" class="page hidden">
+            <h2>My Registered Pets</h2>
+            <div class="table-container">
+                <table id="ownerPetsList">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Species</th>
+                            <th>Breed</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Pet data will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex-center mt-6">
+                <button id="backToOwnerDashboardFromMyPets" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Pet Details & Medical Records Page (Shared by Owner, Vet, Receptionist) -->
+        <div id="petDetailsMedicalRecordsPage" class="page hidden">
+            <h2>Pet Details & Medical Records</h2>
+            <div class="details-display mb-6">
+                <p><strong>Pet ID:</strong> <span id="displayPetId"></span></p>
+                <p><strong>Name:</strong> <span id="displayPetName"></span></p>
+                <p><strong>Species:</strong> <span id="displayPetSpecies"></span></p>
+                <p><strong>Breed:</strong> <span id="displayPetBreed"></span></p>
+                <p><strong>Date of Birth:</strong> <span id="displayPetDob"></span></p>
+                <p><strong>Gender:</strong> <span id="displayPetGender"></span></p>
+                <p><strong>Owner:</strong> <span id="displayPetOwnerName"></span></p>
+            </div>
+
+            <h3>Medical Records</h3>
+            <div class="table-container">
+                <table id="petMedicalRecordsList">
+                    <thead>
+                        <tr>
+                            <th>Visit Date</th>
+                            <th>Diagnosis</th>
+                            <th>Treatment</th>
+                            <th>Medication</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Medical records will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex-center mt-6">
+                <button id="backFromPetDetails" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Veterinarian Dashboard -->
+        <div id="vetDashboard" class="page hidden">
+            <h1>Veterinarian Dashboard</h1>
+            <div class="dashboard-grid">
+                <button id="vetViewAppointmentsBtn" class="dashboard-btn">View Appointments</button>
+                <button id="vetViewPetBtn" class="dashboard-btn">View Pet Records</button>
+                <button id="vetAddRecordsBtn" class="dashboard-btn">Add Medical Record</button>
+                <button id="vetLogoutBtn" class="dashboard-btn logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <!-- Vet: View Appointments Page -->
+        <div id="vetViewAppointmentsPage" class="page hidden">
+            <h2>My Appointments</h2>
+            <div class="table-container">
+                <table id="vetAppointmentsTable">
+                    <thead>
+                        <tr>
+                            <th>Date & Time</th>
+                            <th>Owner</th>
+                            <th>Pet</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Appointment data will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex-center mt-6">
+                <button id="backToVetDashboardFromAppointments" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Vet: View Pet Records Page -->
+        <div id="vetViewPetPage" class="page hidden">
+            <h2>View Pet Records</h2>
+            <div class="form-group flex-row-responsive">
+                <div class="flex-grow">
+                    <label for="vetPetSearchId">Enter Pet ID:</label>
+                    <input type="text" id="vetPetSearchId" placeholder="e.g., PET-0001">
+                </div>
+                <button id="vetSearchPetBtn" class="btn btn-primary mt-sm">Search Pet</button>
+            </div>
+            <div id="vetPetDetailsDisplay" class="hidden">
+                <!-- Pet details and medical records will be dynamically loaded here -->
+            </div>
+            <div class="flex-center mt-6">
+                <button id="backToVetDashboardFromViewPet" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Vet: Add Medical Record Page -->
+        <div id="vetAddRecordPage" class="page hidden">
+            <h2>Add New Medical Record</h2>
+            <div class="form-group">
+                <label for="recordPetId">Pet ID:</label>
+                <input type="text" id="recordPetId" placeholder="Enter Pet ID (e.g., PET-0001)">
+            </div>
+            <div class="form-group">
+                <label for="recordVisitDate">Visit Date:</label>
+                <input type="date" id="recordVisitDate">
+            </div>
+            <div class="form-group">
+                <label for="recordDiagnosis">Diagnosis:</label>
+                <textarea id="recordDiagnosis" placeholder="Diagnosis details" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recordTreatment">Treatment:</label>
+                <textarea id="recordTreatment" placeholder="Treatment provided" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="recordMedication">Medication:</label>
+                <textarea id="recordMedication" placeholder="Medication prescribed" rows="3"></textarea>
+            </div>
+            <div class="flex-col space-y-4">
+                <button id="addRecordSubmitBtn" class="btn btn-primary">Add Record</button>
+                <button id="backToVetDashboardFromAddRecord" class="btn btn-secondary">Back</button>
+            </div>
+        </div>
+
+        <!-- Receptionist Dashboard -->
+        <div id="receptionistDashboard" class="page hidden">
+            <h1>Receptionist Dashboard</h1>
+            <div class="dashboard-grid">
+                <button id="receptionistManageOwnersBtn" class="dashboard-btn">Manage Owners</button>
+                <button id="receptionistManageVetsBtn" class="dashboard-btn">Manage Veterinarians</button>
+                <button id="receptionistManagePetsBtn" class="dashboard-btn">Manage Pets</button>
+                <button id="receptionistManageAppointmentsBtn" class="dashboard-btn">Manage Appointments</button>
+                <button id="receptionistViewPetRecordsBtn" class="dashboard-btn">View Pet Records</button>
+                <button id="receptionistLogoutBtn" class="dashboard-btn logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <!-- Head Receptionist Dashboard -->
+        <div id="headReceptionistDashboard" class="page hidden">
+            <h1>Head Receptionist Dashboard</h1>
+            <div class="dashboard-grid">
+                <button id="headReceptionistManageOwnersBtn" class="dashboard-btn">Manage Owners</button>
+                <button id="headReceptionistManageVetsBtn" class="dashboard-btn">Manage Veterinarians</button>
+                <button id="headReceptionistManagePetsBtn" class="dashboard-btn">Manage Pets</button>
+                <button id="headReceptionistManageAppointmentsBtn" class="dashboard-btn">Manage Appointments</button>
+                <button id="headReceptionistViewPetRecordsBtn" class="dashboard-btn">View Pet Records</button>
+                <button id="headReceptionistManageReceptionistsBtn" class="dashboard-btn">Manage Receptionists</button>
+                <button id="headReceptionistLogoutBtn" class="dashboard-btn logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <!-- Generic Manage Entity Page (Used by Receptionist/Head Receptionist) -->
+        <div id="manageEntityPage" class="page hidden">
+            <h2 id="manageEntityTitle">Manage Entities</h2>
+
+            <div class="form-group flex-row-responsive">
+                <div class="flex-grow">
+                    <label for="manageEntitySearchId">Search by ID:</label>
+                    <input type="text" id="manageEntitySearchId" placeholder="Enter ID">
+                </div>
+                <button id="manageEntitySearchBtn" class="btn btn-primary mt-sm">Search</button>
+            </div>
+
+            <div id="manageEntityInputFields" class="input-fields-grid mb-6">
+                <!-- Input fields will be dynamically generated here by JavaScript -->
+            </div>
+
+            <div class="flex-wrap mt-4">
+                <button id="manageEntityAddBtn" class="btn btn-primary">Add</button>
+                <button id="manageEntityUpdateBtn" class="btn btn-secondary">Update</button>
+                <button id="manageEntityRemoveBtn" class="btn btn-danger">Remove</button>
+                <button id="manageEntityBackBtn" class="btn btn-secondary">Back</button>
+            </div>
+
+            <div class="table-container mt-6">
+                <table id="manageEntityTable">
+                    <thead>
+                        <tr id="manageEntityTableHeader">
+                            <!-- Table headers will be dynamically generated here by JavaScript -->
+                        </tr>
+                    </thead>
+                    <tbody id="manageEntityTableBody">
+                        <!-- Table data will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/RBCP.js"></script>
+</body>
+</html>
